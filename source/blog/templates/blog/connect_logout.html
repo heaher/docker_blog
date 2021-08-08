@@ -1,0 +1,8 @@
+{% extends 'base.html' %} <!-- 追加 -->
+{% block content %} <!-- 追加 -->
+{% include "blog/include/header_default.html" %}
+<br><br><br>
+<div class="text-align"><h4>ログアウトしますか？</h4>
+<a href="{% url 'blog:logout' %}"><button type="submit" class="btn btn-primary">ログアウト</button></a></div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}

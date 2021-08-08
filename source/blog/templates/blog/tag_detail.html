@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include "blog/include/header_default.html" %}
+<br><br><br>
+<div class="container-fluid">
+
+    <div class="row">
+		<div class="col-lg-2">
+        </div>
+      <div class="col-lg-8">
+        <div class="my-font2"><h2>{{object.name}}の投稿一覧</h2></div>
+
+<ul class="list-group my-font2"><p>{% for tag in object.post_set.all %}</p>
+  <li class="list-group-item"><a href="{% url 'blog:list_detail' tag.id %}"><h4>{{ tag.title }}</h4></a>
+<p>投稿日時:{{tag.timestamp}}</p>
+  <p><a href="{% url 'blog:list_detail' tag.id %}"><button type="button" class="btn btn-primary">記事を読む </button></a></p></li>
+  <br>
+{% endfor %}
+</ul>
+        </div>
+        <div class="col-lg-2">
+
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

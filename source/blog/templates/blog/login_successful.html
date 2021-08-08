@@ -1,0 +1,9 @@
+{% extends 'base.html' %} <!-- 追加 -->
+{% block content %} <!-- 追加 -->
+
+{% include "blog/include/header_default.html" %}
+<br><br><br>
+<h2>ログインしました。</h2>
+<p><a href="{% url 'blog:index' %}"><button type="button" class="btn btn-primary">ホームページへ戻る</button></a></p>
+
+{% endblock %}

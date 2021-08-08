@@ -1,0 +1,13 @@
+asgiref==3.2.10
+beautifulsoup4==4.9.3
+Django==3.1.2
+django-bootstrap4==2.3.1
+mysqlclient==2.0.1
+Pillow==8.0.1
+pip==20.2.4
+pytz==2020.1
+setuptools==50.3.2
+soupsieve==2.0.1
+sqlparse==0.4.1
+mod_wsgi
+mod_wsgi-httpd

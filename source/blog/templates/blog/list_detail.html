@@ -1,0 +1,41 @@
+{% extends 'base.html' %} <!-- 追加 -->
+{% block content %} <!-- 追加 -->
+<br><br><br>
+{% include "blog/include/header_default.html" %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-2">
+
+        </div>
+        <div class="col-lg-8">
+            <h1>{{ object.title }}</h1>
+            <br>
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center"><h5>投稿者：<a href="{% url 'blog:another_user_page'　post.id post.username %}">{{object.username}} </a>　　　カテゴリ： {{object.category}} 　　　タグ：{% for tag in object.tags.all %}{{tag.name}}{% empty %}{% endfor %}</h5></li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">{{object.content}}</li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">{{object.description}}</p></li>
+                </ul>
+            <br>
+{% if post.image %}
+<img src="{{ post.image.url }}"  width="30%" height="auto">
+{% endif %}
+<br>
+<br>
+<article class="comment-area">
+    <a href="{% url 'blog:comment_form' post.pk %}"><button type="button" class="btn btn-primary">コメントを投稿する</button></a>
+    <br><br>
+    {% include "blog/include/comments.html" %}
+  </article>
+{% if user.username == post.username %}
+<a href="{% url 'blog:list_edit'　post.id %}"><button type="button" class="btn btn-primary">記事を更新する</button></a>
+<a href="{% url 'blog:list_delete' post.id %}"><button type="button" class="btn btn-primary">記事を削除する</button></a>
+{% else %}
+{% endif %}
+            <br><br>
+        </div>
+        <div class="col-lg-2">
+
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %} <!-- 追加 -->
+{% block content %} <!-- 追加 -->
+
+{% include "blog/include/header_default.html" %}
+<br><br><br>
+{% if user.username == post.username %}
+<h1>記事を編集する</h1>
+    <form method="post" >
+        {% csrf_token %}
+        <p>カテゴリ</p>
+            <p>{{ form.category }}</p>
+         <p>タグ</p>
+            <p>{{ form.tags }}</p>
+        <p>タイトル</p>
+            <p> {{ form.title }}</p>
+        <p>記事</p>
+            <p>{{ form.content }}</p>
+        <p>その他</p>
+            <p>{{ form.description }}</p>
+        <p>{{ form.image }}</p>
+        <p>{{form.username.as_hidden}}</p>
+        <input type="submit" value="保存">
+    </form>
+{% else %}
+<h1>投稿ユーザーではない為、記事を編集できません。</h1>
+{% endif %}
+
+{% endblock %}

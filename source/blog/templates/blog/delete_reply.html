@@ -1,0 +1,16 @@
+{% extends 'base.html' %} <!-- 追加 -->
+{% block content %} <!-- 追加 -->
+{% include "blog/include/header_default.html" %}
+<br><br><br>
+{% if user.is_superuser == 1 or user.username == username%}
+    <h1>削除しますか？</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">削除する</button>
+    </form>
+{% else %}
+<h1>投稿ユーザーではない為、削除できません。</h1>
+{% endif %}
+
+
+{% endblock %}

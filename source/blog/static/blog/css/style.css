@@ -1,0 +1,103 @@
+body {
+background-image: url("/static/blog/img/picture1.jpg");
+background-size: 100%;
+background-attachment: fixed;
+}
+
+a {
+text-decoration:none;
+}
+
+a:link { /*アクセスしたことのないリンク*/
+color:#0000FF;
+}
+
+a:visited { /*アクセスしたことのあるリンク*/
+color:#6600FF;
+}
+
+a:hover {/*マウスが上に乗っている状態*/
+color:#FF0099;
+text-decoration:underline;
+}
+
+a:active {/*クリック中*/
+color:#33CC00 !important;
+}
+
+
+.my-header-bg {
+    background-image: url("/static/blog/img/picture3.jpg")
+}
+
+.left-side-bg {
+    background-image: url("/static/blog/img/picture5.png")
+    background-size: 10%;
+}
+
+.right-side-bg {
+    background-image: url("/static/blog/img/picture6.png")
+}
+
+
+.my-opacity1 {
+    opacity: 0.85;
+    }
+
+.my-opacity2 {
+    opacity: 0;
+    }
+
+.my-font1 {
+  font-family: 'Arial',YuGothic,'Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ', Meiryo,'ＭＳ ゴシック',sans-serif;
+}
+.my-font2 {
+  font-family: "HGP行書体",'arial black','Haettenschweiler','Impact',cursive;
+}
+
+.card-header { background-color: rgba(245, 245, 245, 0); }
+
+.card {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.bg-image {
+  background-image: url('/static/blog/img/picture7.jpg');
+  background-size: cover;
+}
+.bg-mask {
+  height: 100%;
+  background: rgba(255,255,255,0.55);
+}
+
+.card-footer {
+    background-color: rgba(0, 0, 255, 0.1);
+}
+
+.fixed-one {
+  position: fixed;
+  top: 100px;
+}
+.fixed-two {
+  position: fixed;
+  top: 100px;
+  right: 30px;
+}
+
+
+
+.page-link:hover {
+    background-color:rgba(0, 188, 255, 0.4);
+}
+
+.text-align {
+    text-align:center;
+}
+
+.padding{
+    padding-left:50px;
+}
+
+.padding-two {
+    padding-left:20px;
+}

@@ -1,0 +1,42 @@
+{% for comment in post.comments.all %}
+
+<div class="comment">
+  <strong>{{ comment.name }}</strong>・{{ comment.timestamp }}
+  <p>{{ comment.content|linebreaksbr }}</p>
+  <p>
+    <a class="text-primary" href="{% url 'blog:reply_form' comment.pk %}">返信する</a>
+    {% if user.is_superuser == 1 %}
+    ｜<a class="text-danger" href="{% url 'blog:delete_comment' comment.pk post.username %}">削除する</a>
+    {% else %}
+    {% if user.username == post.username %}
+    ｜<a class="text-danger" href="{% url 'blog:delete_comment' comment.pk post.username %}">削除する</a>
+    {% else %}
+    {% endif %}
+    {% endif %}
+
+
+  </p>
+
+  {% for reply in comment.reply.all %}
+
+  <div class="reply ml-5">
+    <strong>{{ reply.name }}</strong>・{{ reply.timestamp }}
+    <p>{{ reply.content|linebreaksbr }}</p>
+    <p>
+    <a class="text-primary" href="{% url 'blog:reply_form' comment.pk %}">返信する</a>
+      {% if user.is_superuser == 1 %}
+    ｜<a class="text-danger" href="{% url 'blog:delete_reply' reply.pk post.username %}">削除する</a>
+      {% else %}
+      {% if user.username == post.username %}
+    ｜<a class="text-danger" href="{% url 'blog:delete_reply' reply.pk post.username %}">削除する</a>
+    {% else %}
+    {% endif %}
+    {% endif %}
+
+
+  </div>
+
+  {% endfor %}
+</div>
+
+{% endfor %}

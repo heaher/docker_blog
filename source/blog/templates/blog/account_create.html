@@ -1,0 +1,14 @@
+
+
+{% extends 'base.html' %} <!-- 追加 -->
+{% block content %} <!-- 追加 -->
+{% include "blog/include/header_default.html" %}
+<br><br><br>
+<h4>新規ユーザー登録</h4>
+<form action=""  method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="padding-two"><button type="submit" class="btn btn-primary">新規登録</button></div>
+    <p></p>
+</form>
+{% endblock %}

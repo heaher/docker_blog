@@ -1,0 +1,9 @@
+{% extends 'base.html' %} <!-- 追加 -->
+{% block content %} <!-- 追加 -->
+{% include "blog/include/header_default.html" %}
+<br><br><br>
+<h1>ユーザー登録が完了しました！</h1>
+
+<p><a href="{% url 'blog:login' %}"><button type="button" class="btn btn-primary">ログインする</button></a></p>
+<p><a href="{% url 'blog:index' %}"><button type="button" class="btn btn-light">ホームページへ戻る</button></a></p>
+{% endblock %}
